@@ -1,8 +1,26 @@
-
 import streamlit as st
 import numpy as np
 import joblib 
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+import plotly.express as px
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, MultiLabelBinarizer, LabelEncoder, FunctionTransformer
+from category_encoders import BinaryEncoder
+from sklearn.compose import ColumnTransformer
+from imblearn.pipeline import Pipeline as imb_Pipeline
+from sklearn.pipeline import Pipeline
+from imblearn.under_sampling import TomekLinks, RandomUnderSampler
+from imblearn.combine import SMOTETomek
+from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import cross_validate , StratifiedKFold
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
+from xgboost import XGBClassifier
+from sklearn.decomposition import PCA
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 df_cols_names = joblib.load('df_cols_names.pkl')
