@@ -3,7 +3,6 @@ import numpy as np
 import joblib 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-import plotly.express as px
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, MultiLabelBinarizer, LabelEncoder, FunctionTransformer
 from category_encoders import BinaryEncoder
 from sklearn.compose import ColumnTransformer
@@ -21,7 +20,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from xgboost import XGBClassifier
 from sklearn.decomposition import PCA
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 df_cols_names = joblib.load('df_cols_names.pkl')
 Model = joblib.load('Model.pkl')
